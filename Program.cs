@@ -28,27 +28,21 @@ namespace MoreOrLessGame
                 }
                 else
                 {
-                    if (playerNumber < 0 || playerNumber >= 100)
+                    if (playerNumber == secretNumber)
+                    {
+                        break;
+                    }
+                    else if (playerNumber < 0 || playerNumber >= 100)
                     {
                         Console.WriteLine("The Secret number is between 0 and 100 included.");
+                    } 
+                    else if (secretNumber > playerNumber)
+                    {
+                        Console.WriteLine("TRY AGAIN, the secret number is bigger.");
                     }
                     else
                     {
-                        if (playerNumber == secretNumber)
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            if (secretNumber > playerNumber)
-                            {
-                                Console.WriteLine("TRY AGAIN, the secret number is bigger.");
-                            }
-                            else
-                            {
-                                Console.WriteLine("TRY AGAIN, the secret number is smaller.");
-                            }
-                        }
+                        Console.WriteLine("TRY AGAIN, the secret number is smaller.");
                     }
                 }
             } while (playerNumber != secretNumber);
